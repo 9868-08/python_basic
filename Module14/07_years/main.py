@@ -11,3 +11,5 @@ for num in range(A,B):
                 print(num)
                 count = 0
         count = 0
+        break
+#print('итого:',result)
