@@ -1,0 +1,23 @@
+print('Задача 8. НОД')
+
+#Напишите функцию, вычисляющую наибольший общий делитель двух чисел
+def gcd(num1, num2):       #(от англ. greatest common divisor)
+    smallest, biggest = smolest_num(num1,num2)
+    if smallest == 0 or biggest == 0 or biggest%smallest==0:
+        return smallest, biggest
+    else:
+        biggest=biggest%smallest
+        smallest, biggest = gcd(smallest, biggest)
+
+def smolest_num(num1,num2):
+        biggest=  (num1+num2+abs(num1-num2))/2
+        smallest= (num1+num2-abs(num1-num2))/2
+        return smallest, biggest
+        print('минимальное число: ', (num1+num2-abs(num1-num2))/2)
+
+
+while True:
+    num1 = int(input('Введите число 1: '))
+    num2 = int(input('Введите число 2: '))
+    smallest, biggest = gcd (num1,num2)
+    print('наибольший общий делитель двух чисел', num1, num2, 'равен: ', smallest)
