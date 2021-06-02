@@ -1,15 +1,22 @@
+# Define the custom function to find element in the list
+def findElement(listName, searchElement):
+  # Read the list using loop
+  for value in listName:
+  # Check the element value is equal to the search value or not
+    if value == searchElement:
+      return True
+
+    # Return false if no match found
+    return False
+
 input_word = 'лава'
+output=[]
 letter_count = 0
 non_uniq_count = 0
 count_inside = 0
 count_outside = 0
+symbols = []
 for symbol_outside in input_word:
-    for symbol_inside in input_word:
-        if symbol_outside == symbol_inside and not count_outside == count_inside:
-            non_uniq_count+=1
-            print ('Повторяется буква', symbol_outside,symbol_inside,'в позиции',count_outside,count_inside)
-        count_inside += 1
-    count_outside += 1
-    count_inside = 0
-unique_symbol = int(len(str(input_word)) - non_uniq_count/2)
-print('количество уникальных букв: ', unique_symbol)
+    if symbol_outside not in input_word:  # если символа нет в списке
+        symbols.append(sym)
+print(symbols)

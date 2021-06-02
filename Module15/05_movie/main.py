@@ -5,7 +5,7 @@ films = ['Крепкий орешек', 'Назад в будущее', 'Так�
 user_film='Мементо1'
 favorite_films=[]
 for film in films:
-    if not film==user_film:
+    if film==user_film:
         favorite_films.append(film)
 if not favorite_films:
   print("Лучших фильмов нет")
