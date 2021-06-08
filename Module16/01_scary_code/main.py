@@ -1,24 +1,20 @@
-a = [1, 5, 3]
-b = [1, 5, 1, 5]
+#a = [1, 5, 3]
+a = ['a', 'b', 'c']
+#b = [1, 5, 1, 5]
+b = ['d', 'e', 'f']
 c = [1, 3, 1, 5, 3, 3]
-for i in b:
-    a.append(i)
-t = 0
-for i in a:
-    if i == 5:
-        t += 1
-print(t)
-d = []
-for i in a:
-    if i != 5:
-        d.append(i)
-for i in c:
-    d.append(i)
-t = 0
-for i in d:
-    if i == 3:
-        t += 1
-print(t)
-print(d)
+a.extend(b)
+print('Объединенный список а: ', a, 'длинной: ', len(a))
 
-# TODO переписать программу
+count = 1
+print(len(a)-len(b))
+for i in a:
+    print('обрабатываю count=',count, 'i=', i, 'count=', count)
+    if count > (len(a) - len(b)):
+        print('удаляетя count=',count,'i=',i)
+        a.remove(i)
+#    print(a)
+    count += 1
+print('а после чистки', a)
+#a.extend(c)
+#print('второй список', a, 'длинной: ', len(a))
