@@ -16,6 +16,9 @@ skating_people=0
 skates_work=[]
 count_ext = 0
 count_int = 0
+skates.sort()
+legs.sort()
+
 for i_leg in legs:                 #перебираем размеры ног людей
     for i_skate in skates:             #перебираем коньки на базе
         if i_leg == i_skate:
