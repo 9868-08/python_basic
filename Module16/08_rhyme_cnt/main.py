@@ -1,9 +1,10 @@
 from random import randrange
-N=10
-list=set(range(N))
-print(list)
-for _ in list:
-    drop_out=randrange(N)
-    print('выбывает', drop_out)
-    list.remove(drop_out)
+
+N = 10  # количество человек в кругу
+list = set(range(N))
+print('исходный список:', list)
+while (not len(list) == 1):
+    droped = randrange(len(list))
+    print('выбывает позиция', list[droped], 'остались', list)
+    list.remove(list[droped])
 print(list)
