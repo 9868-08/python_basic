@@ -10,13 +10,19 @@ credits = []  # ["кто", "кому" , "сколько"]
 list(credits)
 for num in set(range(0, K)):
     credits.append([randrange(N), randrange(N), randrange(10)])
-print(credits)
-
-personal = [set(range(0, N))]
+print('Изначальный список: \n"кто", "кому" , "сколько"')
 for IOU in set(range(0, K)):  # IOU - долговая расписка
-    print(credits[IOU], credits[IOU][0],credits[IOU][1], credits[IOU][2])
-#    personal[credits[IOU][1]] = credits[IOU][2]
-#    personal[credits[IOU][1]] -= credits[IOU][0]
+    print(credits[IOU])
 
+personal=[0 for _ in range(N)]
+for num in range(0,N):
+    personal[num]=0
 
+#personal = [set(range(0, N))]
+for IOU in set(range(0, K)):  # IOU - долговая расписка
+#    print(credits[IOU], credits[IOU][0],credits[IOU][1], credits[IOU][2])
+    personal[credits[IOU][1]] = credits[IOU][2]
+    personal[credits[IOU][1]] -= credits[IOU][0]
+
+print('Отсортированный список: ')
 print (personal)
