@@ -5,7 +5,7 @@ shop = [['каретка', 1200], ['шатун', 1000], ['седло', 300],
 
 print(shop)
 
-incoming_part = 'обод'
+incoming_part = input('введите деталь: ')
 total_cost = 0
 for line in shop:
     if line[0] == incoming_part:

@@ -1,11 +1,11 @@
 from random import randrange
 
-N = 3
-print('Количество друзей:', N)
-K = 10
-print('# количество расписок:', K)
-
+#N = 3
+N=int(input('Введите количество друзей: '))
 friends = set(range(N))
+#K = 10
+K = int(input('количество расписок: '))
+
 credits = []  # ["кто", "кому" , "сколько"]
 list(credits)
 for num in set(range(0, K)):

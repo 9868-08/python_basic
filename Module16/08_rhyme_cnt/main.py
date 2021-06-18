@@ -4,11 +4,9 @@ N=int(input('Какое количество человек будет игра�
 list = list(set(range(N)))
 print('исходный список:', list)
 while (not len(list) == 1):
-    droped = randrange(len(list))
-    print('остались',list)
+#    droped = randrange(len(list))
     droped = int(input('Введите число, которое будет выбывать: '))
-    count=0
-    new_list=[]
-    print('выбывает позиция', droped, 'остались', list)
     list.remove(droped)
+    print('выбывает позиция', droped, 'остались', list)
+
 print('последним остался',list)

@@ -3,13 +3,18 @@ from random import randrange
 list1 = []
 N = 3
 for index in range(N):
-    list1.append(randrange(10))
+    new_i=int(input('введите следующий элемент спиcка: '))
+#    list1.append(randrange(10))
+    list1.append(new_i)
 print('первый список:', list1)
 
 list2 = []
 N = 7
 for index in range(N):
-    list2.append(randrange(10))
+#    list2.append(randrange(10))
+    new_i = int(input('введите следующий элемент спиcка: '))
+    list2.append(new_i)
+
 print('второй список:', list2)
 new_list=[]
 new_list.extend(list1)
