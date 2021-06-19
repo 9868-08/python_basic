@@ -1,19 +1,22 @@
 def symmetrical_check(list):
     count=0
     symm_flag=1
-    for i in list:
-        print('inside def',count,i,len(list))
-        if not list(i) == list (len(list)-i):
+    for i in range(len(list)):
+        if not list[i] == list[len(list)-i-1]:
             symm_flag=0
-        count+=1
     return symm_flag
-
-num_count = int(input('Кол-во чисел: '))
-list = []
-while not num_count == 0:
-    num_count -= 1
-    new_i = int(input('Число: '))
-    list.append(new_i)
-print(list)
-if symmetrical_check(list) == 1:
-    print('Число',list, 'симметричное')
+def input_list() :
+    num_count = int(input('Кол-во значений: '))
+    list = []
+    while not num_count == 0:
+        num_count -= 1
+        new_i = input('введите значение: ')
+        list.append(new_i)
+    return list
+list = ['a','b','c','d']
+#list=input_list()
+count=0
+while symmetrical_check(list) == 0:
+    list.append(list[len(list)-count-2])
+    count+=1
+print('последовательность',list, 'симметричная')
