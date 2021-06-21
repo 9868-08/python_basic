@@ -13,10 +13,10 @@ def input_list() :
         new_i = input('введите значение: ')
         list.append(new_i)
     return list
-list = ['a','b','c','d']
-#list=input_list()
+#list = ['a','b','c','d','e']
+list=input_list()
 count=0
 while symmetrical_check(list) == 0:
-    list.append(list[len(list)-count-2])
+    list.append(list[len(list)-count*2-2])
     count+=1
 print('последовательность',list, 'симметричная')
