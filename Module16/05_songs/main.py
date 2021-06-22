@@ -10,4 +10,19 @@ violator_songs = [
     ['Clean', 5.83]
 ]
 
-# TODO здесь писать код
+#count_songs=3               # Количество песен выбрать
+count_songs=int(input('сколько песен выбрать? '))
+#input_songs=['Personal Jesus', 'Waiting for the Night', 'Policy of Truth']
+input_songs=[]
+while not count_songs == 0:
+    new_song=input('введите следующую песню: ')
+    input_songs.append(new_song)
+    count_songs-=1
+input_songs_sound_time=0
+for song_in_violator_songs in violator_songs:
+    for song_in_input_songs in input_songs:
+        if song_in_violator_songs[0]==song_in_input_songs:
+            print('найдено совпадение песни', song_in_input_songs,'добавляется длительность',song_in_violator_songs[1])
+            input_songs_sound_time+=song_in_violator_songs[1]
+print('Общее время звучания песен:', input_songs,'равно',input_songs_sound_time)
+
