@@ -1,15 +1,13 @@
 import random
 
 team1=[]
-for index in range(20):
-    team1.append(round(random.uniform(0,10), 2))
-print ('Очки участников первой команда: ',team1)
+team1 = [round(random.uniform(0,10),2) for i in range(20)]
+print ('Очки участников первой команды: ',team1)
 
-team2=[]
-for index in range(20):
-    team2.append(round(random.uniform(0,10), 2))
+team2 = [round(random.uniform(0,10),2) for i in range(20)]
 print ('Очки участников второй команды: ',team2)
 
-for i in len(team1):
-    print(i,team1[i])
+team3 = [team1[i] for i in range(20) if team1[i]>team2[i]]
+team3 = [team2[i] for i in range(20) if team1[i]>team2[i]]
 
+print ('Очки участников побед-лей тура: ',team3)
