@@ -2,9 +2,5 @@ from random import randint
 
 list = []
 N = 5
-
-#list = [randint(0,9),randint(10,19) for i in range(N)]
-for range(N):
-    list.append(random(N),random(N))
-
-print('изначальный список:', list)
+list = [[i, i + 4, i + 8] for i in range(1, 5)]
+print('Cписок заказчика: ', list)
