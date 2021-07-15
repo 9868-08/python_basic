@@ -1,7 +1,7 @@
 import random
 
 team1=[]
-for index in range(20):
+for index in range(len(team1)):
     team1.append(round(random.uniform(0,10), 2))
 print ('Очки участников первой команда: ',team1)
 
