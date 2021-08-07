@@ -1,13 +1,17 @@
-import re
+def shifter(str,shift):
+    count = 0
+    result = ''
+    tmp=str+str
+    for i in str:
+        result+=tmp[count+shift]
+        count+=1
+    return result
 
-inc = 'Это задание очень! простое'
-list = re.split('' ' |, |\*|!', inc)
-out = ''
-for word in list:
-    reverse_word = ''
-    count = 1
-    for i in word:
-        reverse_word = reverse_word + word[len(word) - count]
-        count += 1
-    out += reverse_word
-    print(out)
+str1='abcdйцук'
+str2='cdйцукab'
+
+count=0
+for i in str1:
+    if shifter(str1,count) == str2:
+        print('строка',str1,'равна строке',str2,'со сдвигом',count)
+    count+=1
