@@ -30,3 +30,13 @@ words_list = text.split('/')
 
 for i in words_list:
     print(caesar_cipher(i,1))
+
+def shift_word(word, word_shift):
+    word_ln = len(word)
+    shift = word_shift % word_ln
+    return ''.join([word[shift:], word[:shift]])
+
+
+def word_decode(word: str, word_shift):
+    correct_word = shift_word(word, word_shift)
+    return ''.join([chr(ord(symbol) - 1) for symbol in correct_word])
