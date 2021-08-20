@@ -27,11 +27,6 @@ text='vujgvmCfb tj ufscfu ouib z/vhm jdjuFyqm jt fscfuu uibo jdju/jnqm fTjnqm tj
 #прохожу по каждому слову в списке. Если нахожу в слове '/', то ключ смещения увеличиваю на 1.
 
 str_list = text.split('/')
-shift = 1
-for i in str_list:
-    print('i=',i)
-    words_list=i.split(' ')
-    for word in words_list:
-        print(caesar_cipher(word,i))
-#    print(caesar_cipher(i, shift))
-    shift+=1
+
+for i in range(0,50):
+    print(caesar_cipher(str_list[0],i))
