@@ -1,25 +1,17 @@
-# count=int(input('Количество стран N: '))
-count_country = 2
-print('Количество стран', count_country)
-count_city = 3
-print('Количество городов', count_city)
-import re
-data = dict()
-for i in range(0,count_country):
-	print(i, ' страна:',end=" ")
-	mystr = input()
-	wordList = re.sub("[^\w]", " ", mystr).split()
-	print(wordList)
-	data = {wordList(0):wordList}
-print(data)
+def array_search (array,search):
+	for i in array:
+		if i == search:
+			print('город', search, 'находится в ', "тут нужно выташить из словаря страну")
+	return "вернуть страну"
 
-#	print(cities)
-inc = {'Россия': ['Москва', 'Петербург', 'Новгород', 'Самара'],
-	   'Германия': ['Берлин', 'Лейпциг', 'Мюнхен']}
-search_value = 'Самара'
-for country in inc:
-	#	print('country = ', country)
-	for city in inc[country]:
-		#		print('city = ', city)
-		if city == search_value:
-			print('город', search_value, 'находится в', country)
+
+motherland = dict()
+country_count = int(input('Кол-во стран: '))
+print('Германия Берлин Лейпциг Мюнхен')		# подсказдки,
+print('Россия Москва Петербург Новгород')	# чтобы не набирать
+for i_country in range(country_count):
+    cities_list = input('{} страна: '.format(i_country + 1)).split()
+    for j_city in cities_list[1:]:
+        motherland[j_city] = cities_list[0]
+print('motherland=',motherland)
+array_search(motherland,'Новгород')

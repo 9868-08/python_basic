@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4ddc77d4-984b-418a-a3f1-cc6d5785f62f" name="Default Changelist" comment="01_songs">
+    <list default="true" id="4ddc77d4-984b-418a-a3f1-cc6d5785f62f" name="Default Changelist" comment="02_geography unwork">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Module19/02_geography/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Module19/02_geography/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module19/02_geography/main.py.bak" beforeDir="false" afterPath="$PROJECT_DIR$/Module19/02_geography/main.py.bak" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python.txt" beforeDir="false" afterPath="$PROJECT_DIR$/python.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +54,9 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="2" />
   </component>
   <component name="ProjectId" id="1sWIXaIkxkcPfx5jcynbqDXHSOQ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -360,7 +365,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630414493955</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="02_geography unwork">
+      <created>1630522353997</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1630522353997</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -396,7 +408,8 @@
     <MESSAGE value="03" />
     <MESSAGE value="4" />
     <MESSAGE value="01_songs" />
-    <option name="LAST_COMMIT_MESSAGE" value="01_songs" />
+    <MESSAGE value="02_geography unwork" />
+    <option name="LAST_COMMIT_MESSAGE" value="02_geography unwork" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

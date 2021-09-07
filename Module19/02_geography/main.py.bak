@@ -1,9 +1,33 @@
+def array_search (array):
+	for i in array:
+		for j in i:
+			print('i=',i,'j=',j)
+	return 9868.08
+
 # count=int(input('Количество стран N: '))
 count_country = 2
 print('Количество стран', count_country)
 count_city = 3
 print('Количество городов', count_city)
-
+import re
+data = []
+for i in range(0,count_country):
+	print(i+1, ' страна:',end=" ")
+	mystr = input()
+	wordList = re.sub("[^\w]", " ", mystr).split()
+	count = 0
+	tmp = []
+	for i in wordList:
+		if count != 0:
+			print(i)
+			tmp.append(i)
+		count +=1
+	data.append([wordList[0],tmp])
+	print(data)
+search = input("город: ")
+print(array_search(data))
+#	print(cities)
+'''
 inc = {'Россия': ['Москва', 'Петербург', 'Новгород', 'Самара'],
 	   'Германия': ['Берлин', 'Лейпциг', 'Мюнхен']}
 search_value = 'Самара'
@@ -13,3 +37,4 @@ for country in inc:
 		#		print('city = ', city)
 		if city == search_value:
 			print('город', search_value, 'находится в', country)
+'''
