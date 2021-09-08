@@ -1,42 +1,26 @@
-def shifter(str,shift):
-    count = 0
-    result = ''
-    tmp=str+str
-    for i in str:
-        result+=tmp[count+shift]
-        count+=1
-    return result
+abc = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
-def caesar_cipher(message,shift):
-    abc = 'abcdefghijklmnopqrstuvwxyzABCDEFGJIGKLMNOPQRSTUVY'
-    abc += abc
-    count = 1
-    ceaser_cipher = ''
-    for letter in message:
-        if letter == " ":
-            new_index = index
-            ceaser_cipher += ' '
-        else:
-            index = abc.index(letter)
-            new_index = index + shift
-            ceaser_cipher += abc[new_index]
-    print('Зашифрованное сообщение: ', ceaser_cipher)
+message = 'vujgvmCfb tj ufscfu ouib z/vhm jdjuFyqm jt fscfuu uibo jdju/jnqm fTjnqm tj scfuuf ibou fy/dpnqm yDpnqmf jt cfuufs boui dbufe/dpnqmj uGmb tj fuufsc ouib oftufe/ bstfTq jt uufscf uibo otf/ef uzSfbebcjmj vout/dp djbmTqf dbtft (ubsfo djbmtqf hifopv up csfbl ifu t/svmf ipvhiBmu zqsbdujdbmju fbutc uz/qvsj Fsspst tipvme wfsof qbtt foumz/tjm omfttV mjdjumzfyq odfe/tjmf Jo fui dfgb pg hvjuz-bncj gvtfsf fui ubujpoufnq up ftt/hv Uifsf vmetip fc pof.. boe sbcmzqsfgf zpom pof pvt..pcwj xbz pu pe ju/ Bmuipvhi uibu bzx bzn puo cf wjpvtpc bu jstug ttvomf sfzpv( i/Evud xOp tj scfuuf ibou /ofwfs uipvhiBm fsofw jt fopgu cfuufs boui iu++sjh x/op gJ ifu nfoubujpojnqmf tj eibs pu mbjo-fyq tju( b bec /jefb Jg fui foubujpojnqmfn jt fbtz up bjo-fyqm ju znb cf b hppe jefb/ bnftqbdftO bsf pof ipoljoh sfbuh efbj .. fu(tm pe psfn gp tf"uip'
 
 
-text='vujgvmCfb tj ufscfu ouib z/vhm jdjuFyqm jt fscfuu uibo jdju/jnqm fTjnqm tj scfuuf ibou fy/dpnqm yDpnqmf jt cfuufs boui dbufe/dpnqmj uGmb tj fuufsc ouib oftufe/ bstfTq jt uufscf uibo otf/ef uzSfbebcjmj vout/dp djbmTqf dbtft (ubsfo djbmtqf hifopv up csfbl ifu t/svmf ipvhiBmu zqsbdujdbmju fbutc uz/qvsj Fsspst tipvme wfsof qbtt foumz/tjm omfttV mjdjumzfyq odfe/tjmf Jo fui dfgb pg hvjuz-bncj gvtfsf fui ubujpoufnq up ftt/hv Uifsf vmetip fc pof.. boe sbcmzqsfgf zpom pof pvt..pcwj xbz pu pe ju/ Bmuipvhi uibu bzx bzn puo cf wjpvtpc bu jstug ttvomf sfzpv( i/Evud xOp tj scfuuf ibou /ofwfs uipvhiBm fsofw jt fopgu cfuufs boui iu++sjh x/op gJ ifu nfoubujpojnqmf tj eibs pu mbjo-fyq tju( b bec /jefb Jg fui foubujpojnqmfn jt fbtz up bjo-fyqm ju znb cf b hppe jefb/ bnftqbdftO bsf pof ipoljoh sfbuh efbj .. fu(tm pe psfn gp tf"uip'
+tmp = ''
 
-words_list = text.split('/')
-#print (words_list)
+for i_letter in message:
+    if i_letter in abc:
+        text = abc[(abc.index(i_letter) - 1) % 52]
+        tmp += text
+    else:
+        tmp += i_letter
 
-for i in words_list:
-    print(caesar_cipher(i,1))
+text_decrypted = tmp.split()
+shift = 3
 
-def shift_word(word, word_shift):
-    word_ln = len(word)
-    shift = word_shift % word_ln
-    return ''.join([word[shift:], word[:shift]])
+for i_word in range(len(text_decrypted)):
+    for _ in range(shift):
+        text_decrypted[i_word] = text_decrypted[i_word][-1:] + text_decrypted[i_word][:-1]
+    index_symbol = text_decrypted[i_word].find('/')
+    if index_symbol >= 0:
+        text_decrypted[i_word] = text_decrypted[i_word][:index_symbol] + '.'
+        shift += 1
 
-
-def word_decode(word: str, word_shift):
-    correct_word = shift_word(word, word_shift)
-    return ''.join([chr(ord(symbol) - 1) for symbol in correct_word])
+print(' '.join(text_decrypted))
