@@ -4,14 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ddc77d4-984b-418a-a3f1-cc6d5785f62f" name="Default Changelist" comment="02_geography unwork">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Module19/02_geography/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Module19/02_geography/main.py" afterDir="false" />
+    <list default="true" id="4ddc77d4-984b-418a-a3f1-cc6d5785f62f" name="Default Changelist" comment="02_geography works after teacher helped">
+      <change beforePath="$PROJECT_DIR$/Module19/02_geography/main.py.bak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module19/03_cryptocurrency/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Module19/03_cryptocurrency/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Rebase.Settings">
+    <option name="NEW_BASE" value="Module19" />
   </component>
   <component name="Git.Settings">
     <excluded-from-favorite>
@@ -73,7 +76,7 @@
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
-  <component name="RunManager" selected="Python.main (1)">
+  <component name="RunManager" selected="Python.main (2)">
     <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Python_Basic_slillbox" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -95,19 +98,19 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="main (3)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="main (2)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Python_Basic_slillbox" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\roer0121\AppData\Local\Microsoft\WindowsApps\python3.9.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Module18/04_capital_letters" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Module19/03_cryptocurrency" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Module18/04_capital_letters/main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Module19/03_cryptocurrency/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -181,11 +184,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main (2)" />
         <item itemvalue="Python.main (1)" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.main (5)" />
         <item itemvalue="Python.main (4)" />
-        <item itemvalue="Python.main (3)" />
       </list>
     </recent_temporary>
   </component>
@@ -373,7 +376,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630522353997</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="02_geography works after teacher helped">
+      <created>1631211907500</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1631211907500</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -410,7 +420,8 @@
     <MESSAGE value="4" />
     <MESSAGE value="01_songs" />
     <MESSAGE value="02_geography unwork" />
-    <option name="LAST_COMMIT_MESSAGE" value="02_geography unwork" />
+    <MESSAGE value="02_geography works after teacher helped" />
+    <option name="LAST_COMMIT_MESSAGE" value="02_geography works after teacher helped" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

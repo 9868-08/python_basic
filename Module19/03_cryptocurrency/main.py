@@ -45,4 +45,5 @@ data = {
 }
 
 
-# TODO здесь писать код
+print('1. Вывести списки ключей и значений словаря',data)
+print([data[int(x)] for x in data.split()])
