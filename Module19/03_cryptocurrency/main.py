@@ -46,4 +46,10 @@ data = {
 
 
 print('1. Вывести списки ключей и значений словаря',data)
-print([data[int(x)] for x in data.split()])
+print('ключи словаря: ', end=' ')
+for i_data in data:
+    print(i_data, end=' ')
+print('списки значений: ', end=' ')
+for i_data in data:
+    for i in data[i_data]:
+        print(i, end=' ')
