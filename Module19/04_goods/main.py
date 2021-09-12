@@ -24,4 +24,13 @@ store = {
     ],
 }
 
-# TODO здесь писать код
+# Лампа - 27 шт, стоимость 1134 руб
+# Стол - 54 шт, стоимость 27860 руб
+# Диван - 3 шт, стоимость 3550 руб
+# Стул - 105 шт, стоимость 10311 руб
+sym_dict = dict()
+for i_goods in goods:
+    print (i_goods,' - ', end ='')      #,goods[i_goods])
+    for i_store in store:
+        print (store[i_store])
+#print(sym_dict)
