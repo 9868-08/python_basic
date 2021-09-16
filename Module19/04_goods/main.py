@@ -39,4 +39,4 @@ for merch, code in goods.items():
 	for goods in store[code]:
 		total_quantity += goods['quantity']
 		total_cost += goods['price']
-	print(merch,' - ',total_quantity,'шт, стоимость ',total_cost*total_quantity,'руб')
+	print(merch,' - ',total_quantity,'шт, стоимость',total_cost*total_quantity,'руб')
