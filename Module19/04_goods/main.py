@@ -33,10 +33,13 @@ store = {
     for i_store in store:
         print (store[i_store]) '''
 
-for merch, code in goods.items():
+for merch, code in goods.items():	# merch-'Лампа', code-'12345',
 	total_quantity = 0
 	total_cost = 0
-	for goods in store[code]:
-		total_quantity += goods['quantity']
-		total_cost += goods['price']
-	print(merch,' - ',total_quantity,'шт, стоимость',total_cost*total_quantity,'руб')
+	for goods in store[code]:		# 'quantity': 27, 'price': 42
+#		print(goods)
+		for i in goods:
+			total_quantity += goods['quantity']
+			total_cost += goods['price']*goods['quantity']
+			print(goods['quantity'],goods['price'])
+	print(merch, ' - ', total_quantity, 'шт, стоимость', total_cost * total_quantity, 'руб')
