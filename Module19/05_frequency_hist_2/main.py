@@ -4,7 +4,7 @@ def find_in_index_by_value(input_dict, value):
             return input_dict[i]
 
 
-# message = "здесь что-то написано"
+# message = "Здесь что-то написано"
 message = input('Введите текст: ')
 count = dict()
 for i in message:
