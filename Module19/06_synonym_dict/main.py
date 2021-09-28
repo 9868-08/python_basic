@@ -14,9 +14,10 @@ print ('Привет - Здравствуйте')
 for i in range (0, pairs_count):
 	print(i+1, 'пара:', end=' ')
 	input_string = input()
-	input_list = input_string.split('-')
-#	print(input_list[0],':',input_list[1])
+	input_list = input_string.split(' - ')
+	print(input_list[0],input_list[1])
 	input_dict[input_list[0]] = input_list[1]
+	input_dict[input_list[1]] = input_list[0]
 
 while 1 == 1:
 	word_input = input ('Введите слово: ')
