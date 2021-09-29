@@ -13,7 +13,7 @@ for i in range (0, pairs_count):
 		if input_list[1] in input_dict[input_list[0]]:
 			input_dict[input_list[0]][input_list[1]] += int(input_list[2])
 		else:
-			input_dict[input_list[0]].update({input_list[1]: int(input_list[2])}
+			input_dict[input_list[0]].update({input_list[1]: int(input_list[2])})
 	else:
 			input_dict[input_list[0]] = [input_list[1], input_list[2]]
 	print(input_dict)
