@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3cc1a70e-4193-4b69-8eae-fbd378a13cb4" name="Changes" comment="07_pizza release">
+    <list default="true" id="3cc1a70e-4193-4b69-8eae-fbd378a13cb4" name="Changes" comment="08_guess_number release">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Module19/08_guess_number/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Module19/08_guess_number/main.py" afterDir="false" />
     </list>
@@ -239,7 +239,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632989071729</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="08_guess_number release">
+      <created>1633027025060</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1633027025060</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -264,6 +271,7 @@
     <MESSAGE value="07_pizza in work" />
     <MESSAGE value="07_pizza in unwork" />
     <MESSAGE value="07_pizza release" />
-    <option name="LAST_COMMIT_MESSAGE" value="07_pizza release" />
+    <MESSAGE value="08_guess_number release" />
+    <option name="LAST_COMMIT_MESSAGE" value="08_guess_number release" />
   </component>
 </project>
