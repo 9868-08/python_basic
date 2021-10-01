@@ -18,16 +18,18 @@
 #      иначе - берем разность possible_nums с guess с заменой possible_nums (делается с помощью оператора -=)
 #  - печатаем числа, которые мог загадать Артем, - сортированные possible_nums
 from random import randrange
-#max_number = int("Введите максимальное число: ")
+
+# max_number = int("Введите максимальное число: ")
 max_number = 10
-enigmatically=randrange(max_number)
+enigmatically = randrange(max_number)
 print('Загадано: ', enigmatically)
-all_nums = [i for i in range(max_number+1)]
+all_nums = [i for i in range(max_number + 1)]
 possible_nums = all_nums
 while 1 == 1:
 	guess = input("Нужное число есть среди вот этих чисел: ")
-	guess_list =
+	guess_list = set(guess)
 	if guess == "Помогите!":
 		break
-	guess_list = [i for i in guess.split()]
+	str_1 = "Hire the top 1% freelance developers"
+	#	guess_list = guess.split()
 	print(guess_list)
