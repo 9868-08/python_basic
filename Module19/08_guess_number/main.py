@@ -28,9 +28,17 @@ all_nums = {i for i in range(max_number + 1)}
 possible_nums = all_nums
 while 1 == 1:
 	guess = input("Нужное число есть среди вот этих чисел: ")
-	guess_list = set(guess)
 	if guess == "Помогите!":
 		break
-	str_1 = "Hire the top 1% freelance developers"
-	#	guess_list = guess.split()
-	print(guess_list)
+	guess_list = set(guess)
+	guess_list = guess.split()
+#	print(guess_list)
+	for i in guess_list:
+		answer = input('?')
+		if answer == 'да':
+			# берем пересечение possible_nums с guess с заменой possible_nums
+			print(possible_nums &= guess)
+		else:
+			print(possible_nums &= guess)  # берем разность possible_nums с guess с заменой possible_nums
+	print(possible_nums)
+
