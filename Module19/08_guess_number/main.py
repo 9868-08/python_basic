@@ -31,16 +31,15 @@ while 1 == 1:
 	if guess == "Помогите!":
 		break
 	guess_set = guess.split()
-	guess_set_int = {int(i) for i in ['1', '2', '3']}
+	guess_set_int = {int(i) for i in guess_set}
 	print(guess_set)
 	print(guess_set_int)
-	for i in guess_set_int:
-		answer = input('?')
-		if answer == 'да':
-			# берем пересечение possible_nums с guess с заменой possible_nums
-			print(possible_nums &= guess_list_int)
-		else:
-			print(possible_nums &= guess_list_int)  # берем разность possible_nums с guess с заменой
-			# possible_nums'''
+	answer = input('?')
+	if answer == 'да':
+		# берем пересечение possible_nums с guess с заменой possible_nums
+		print(possible_nums &= guess_list_int)
+	else:
+		print(possible_nums -= guess_list_int)  # берем разность possible_nums с guess с заменой
+		# possible_nums'''
 #	print(possible_nums)
 
