@@ -30,20 +30,17 @@ while 1 == 1:
 	guess = input("Нужное число есть среди вот этих чисел: ")
 	if guess == "Помогите!":
 		break
-	guess_list = set(guess)
-	guess_list = guess.split()
-	guess_list_int = set()
-	for i in guess_list:
-		i=int(i)
-		guess_list_int.add(int(1))
-	print(guess_list, guess_list_int)
-	for i in guess_list_int:
+	guess_set = guess.split()
+	guess_set_int = {int(i) for i in ['1', '2', '3']}
+	print(guess_set)
+	print(guess_set_int)
+	for i in guess_set_int:
 		answer = input('?')
 		if answer == 'да':
 			# берем пересечение possible_nums с guess с заменой possible_nums
 			print(possible_nums &= guess_list_int)
 		else:
 			print(possible_nums &= guess_list_int)  # берем разность possible_nums с guess с заменой
-			# possible_nums
-	print(possible_nums)
+			# possible_nums'''
+#	print(possible_nums)
 
