@@ -32,13 +32,18 @@ while 1 == 1:
 		break
 	guess_list = set(guess)
 	guess_list = guess.split()
-#	print(guess_list)
+	guess_list_int = set()
 	for i in guess_list:
+		i=int(i)
+		guess_list_int.add(int(1))
+	print(guess_list, guess_list_int)
+	for i in guess_list_int:
 		answer = input('?')
 		if answer == 'да':
 			# берем пересечение possible_nums с guess с заменой possible_nums
-			print(possible_nums &= guess)
+			print(possible_nums &= guess_list_int)
 		else:
-			print(possible_nums &= guess)  # берем разность possible_nums с guess с заменой possible_nums
+			print(possible_nums &= guess_list_int)  # берем разность possible_nums с guess с заменой
+			# possible_nums
 	print(possible_nums)
 
