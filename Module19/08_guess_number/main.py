@@ -26,7 +26,7 @@ print('Загадано: ', enigmatically)
 all_nums = {i for i in range(max_number + 1)}
 
 possible_nums = all_nums
-while 1 == 1:
+while True:
 	guess = input("Нужное число есть среди вот этих чисел: ")
 	if guess == "Помогите!":
 		break
@@ -37,9 +37,8 @@ while 1 == 1:
 	answer = input('?')
 	if answer == 'да':
 		# берем пересечение possible_nums с guess с заменой possible_nums
-		print(possible_nums &= guess_list_int)
+		possible_nums &= guess_set_int
 	else:
-		print(possible_nums -= guess_list_int)  # берем разность possible_nums с guess с заменой
-		# possible_nums'''
-#	print(possible_nums)
+		possible_nums -= guess_set_int
+print(possible_nums)
 
