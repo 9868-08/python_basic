@@ -21,7 +21,7 @@ geno_dict = {}
 	geno_set = inc.split()
 	geno_dict[i] = geno_set'''
 # атоматизация, чтобы не вводить код
-geno_dict = {1: ['ee_папа', 'ff_мама'], 2: ['cc_бабушка', 'dd_дедушка'], 3: ['bb_прабабушка',
+geno_dict = {2: ['ee_папа', 'ff_мама'], 1: ['cc_бабушка', 'dd_дедушка'], 3: ['bb_прабабушка',
 																			 'aa_прадедушка']}
 print('не сортированный список: ', geno_dict)
 list_geno = list(geno_dict.items())
