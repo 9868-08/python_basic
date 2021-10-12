@@ -1,12 +1,21 @@
-input = 'aab'
+input = 'abbb'
 
-count_i = 0
-count_j = 0
+input_dict = dict()
 for i in input:
-	for j in input:
-		if i == j and count_i != count_i:
-			print('count_i=',count_i,'count_j',count_j)
-		count_j += 1
+	if i in input_dict:
+		input_dict[i] += 1
+	else:
+		input_dict[i] = 1
+odd = 0
+for i in input_dict:
+	if input_dict[i] % 2 == 0:	#четное количество символов
+		True
+	else:
+		odd +=1
+if odd <= 1:
+	print('Можно сделать палиндромом')
+else:
+	print('Нельзя сделать палиндромом')
 
 
 '''#Этот код вычисляет список уникальных элементов в исходном порядке
