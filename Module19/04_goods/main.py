@@ -24,4 +24,21 @@ store = {
     ],
 }
 
-# TODO здесь писать код
+# Лампа - 27 шт, стоимость 1134 руб
+# Стол - 54 шт, стоимость 27860 руб
+# Диван - 3 шт, стоимость 3550 руб
+# Стул - 105 шт, стоимость 10311 руб
+'''for i_goods in goods:
+    print (i_goods,' - ', end ='')      #,goods[i_goods])
+    for i_store in store:
+        print (store[i_store]) '''
+
+for merch, code in goods.items():  # merch-'Лампа', code-'12345',
+    total_quantity = 0
+    total_cost = 0
+    for goods in store[code]:
+        total_quantity += goods['quantity']
+        total_cost += goods['price'] * goods['quantity']
+    print(merch, ' - ', total_quantity, 'шт, стоимость', total_cost, 'руб')
+
+# зачтено

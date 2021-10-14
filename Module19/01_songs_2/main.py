@@ -9,5 +9,18 @@ violator_songs = {
     'Blue Dress': 4.29,
     'Clean': 5.83
 }
+# Напишите программу, которая запрашивает у пользователя кол-во песен из списка и затем названия этих песен, а на экран  выводит # общее время их звучания.
+# print (violator_songs)
+# count=int(input('Сколько песен выбрать? '))
+count = 3
+selected_songs = []
+# selected_songs = ['Policy of Truth','Enjoy the Silence','Personal Jesus']
+for i in range(0, count):
+    selected_songs.append(input("Введте название песни: "))
+playing_time = 0
+for i in violator_songs:
+    if i in selected_songs:
+        playing_time += violator_songs[i]
+print('Общее время звучанния', selected_songs, '=', playing_time)
 
-# TODO здесь писать код
+# зачтено
