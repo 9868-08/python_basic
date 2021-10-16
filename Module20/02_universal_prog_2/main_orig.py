@@ -21,15 +21,13 @@ students = {
 
 
 def f(dict):
-    return ([i for i in dict += (dict[i]['interests'])], [i for i in dict += (dict[i]['interests'])])
-    '''    lst = []
-        last_name_len = 0
-        for i in dict:
-            lst += (dict[i]['interests'])
-            last_name_len += len(dict[i]['surname'])
-        cnt = 0
-    '''
-#    return lst, last_name_len
+    lst = []
+    last_name_len = 0
+    for i in dict:
+        lst += (dict[i]['interests'])
+        last_name_len += len(dict[i]['surname'])
+    cnt = 0
+    return lst, last_name_len
 
 def isPrime(n):
     if n % 2 == 0:
