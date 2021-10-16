@@ -4,4 +4,8 @@ players = {
     ("Rob", "Bobbin"): (12, 8, 2)
 }
 
-# TODO здесь писать код
+players_set=[]
+for i in players:
+    players_unated = i + players[i]
+    players_set.append(players_unated)
+print(players_set)
