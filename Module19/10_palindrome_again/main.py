@@ -1,4 +1,4 @@
-input = 'abbb'
+input = 'aabbb'
 
 input_dict = dict()
 for i in input:
