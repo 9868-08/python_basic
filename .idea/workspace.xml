@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3cc1a70e-4193-4b69-8eae-fbd378a13cb4" name="Changes" comment="02_universal_prog_2 pre-release">
-      <change afterPath="$PROJECT_DIR$/Module20/02_universal_prog_2/main_orig.py" afterDir="false" />
+    <list default="true" id="3cc1a70e-4193-4b69-8eae-fbd378a13cb4" name="Changes" comment="?">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Module19/10_palindrome_again/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Module19/10_palindrome_again/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Module20/02_universal_prog_2/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Module20/02_universal_prog_2/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module20/03_function/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Module20/03_function/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +38,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="settings.editor.selected.configurable" value="advanced.settings" />
   </component>
-  <component name="RunManager" selected="Python.main (2)">
+  <component name="RunManager" selected="Python.main (3)">
     <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="python_basic" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -83,7 +81,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="main (5)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="main (3)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="python_basic" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -91,11 +89,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Module19/09_pedigree" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Module20/03_function" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Module19/09_pedigree/main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Module20/03_function/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -148,11 +146,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main (3)" />
         <item itemvalue="Python.main (2)" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.main (1)" />
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.main (5)" />
       </list>
     </recent_temporary>
   </component>
@@ -375,7 +373,21 @@
       <option name="project" value="LOCAL" />
       <updated>1634373050163</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="02_universal_prog_2 pre-release">
+      <created>1634374241398</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1634374241398</updated>
+    </task>
+    <task id="LOCAL-00032" summary="?">
+      <created>1634374266005</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1634374266005</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -406,7 +418,8 @@
     <MESSAGE value="10_palindrome_again unwork" />
     <MESSAGE value="01_code_review pre-reliase" />
     <MESSAGE value="02_universal_prog_2 pre-release" />
-    <option name="LAST_COMMIT_MESSAGE" value="02_universal_prog_2 pre-release" />
+    <MESSAGE value="?" />
+    <option name="LAST_COMMIT_MESSAGE" value="?" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
