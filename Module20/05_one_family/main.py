@@ -4,5 +4,5 @@ database = {'Сидоров Никита': 35, 'Сидорова Алина': 34
 searching = input('Введите фамилию: ')
 for i in database:
 	for j in i.split():
-		if searching in j:
+		if searching.lower() in j.lower():
 			print(i,database[i])
