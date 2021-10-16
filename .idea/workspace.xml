@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3cc1a70e-4193-4b69-8eae-fbd378a13cb4" name="Changes" comment="?">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="3cc1a70e-4193-4b69-8eae-fbd378a13cb4" name="Changes" comment="03_function release">
       <change beforePath="$PROJECT_DIR$/Module20/03_function/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Module20/03_function/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -387,7 +386,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634374266005</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="03_function release">
+      <created>1634377964699</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1634377964699</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -419,7 +425,8 @@
     <MESSAGE value="01_code_review pre-reliase" />
     <MESSAGE value="02_universal_prog_2 pre-release" />
     <MESSAGE value="?" />
-    <option name="LAST_COMMIT_MESSAGE" value="?" />
+    <MESSAGE value="03_function release" />
+    <option name="LAST_COMMIT_MESSAGE" value="03_function release" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
