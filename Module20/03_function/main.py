@@ -5,7 +5,7 @@ def f(f_set,f_inputed):
 	output_set = []
 	flag = False
 	for i in f_set:
-		if i == inputed:
+		if i == f_inputed:
 			flag = not flag
 		if flag == True:
 			output_set.append(i)
