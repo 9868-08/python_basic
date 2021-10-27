@@ -29,6 +29,21 @@ def f(dict):
     cnt = 0
     return lst, last_name_len
 
+def isPrime(n):
+    if n % 2 == 0:
+        return n == 2
+    d = 3
+    while d * d <= n and n % d != 0:
+        d += 2
+    return d * d > n
+
+def Prime_set(inc):
+	out_dic = dict()
+	for i in inc:
+		if isPrime(i):
+			print(i)
+			out_dic[i] = inc[i]
+	print(out_dic)
 
 pairs = dict ()
 for i in students:
@@ -40,4 +55,4 @@ for i in pairs:
 global_lst = f(students)[0]
 len = f(students)[1]
 print('список интересов:',global_lst, '\nобщая длина всех фамилий:' , len)
-
+print(Prime_set(students))
