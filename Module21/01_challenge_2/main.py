@@ -1,9 +1,10 @@
-def my_func(num_finish):
-	num = 1
-	while num != num_finish+1:
+def my_func(num_start, num_finish):
+	num = num_start
+	if num != num_finish+1:
 		print(num)
 		num += 1
+		my_func(num,num_finish)
 
 
 finish = int(input("Введите конечное число: "))
-my_func(finish)
+my_func(1,finish)
