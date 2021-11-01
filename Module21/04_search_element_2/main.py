@@ -1,17 +1,3 @@
-site = {
-	'html': {
-		'head': {
-			'title': 'Мой сайт'
-		},
-		'body': {
-			'h2': 'Здесь будет мой заголовок',
-			'div': 'Тут, наверное, какой-то блок',
-			'p': 'А вот здесь новый абзац'
-		}
-	}
-}
-
-
 def find_key(struct, key, searching_deep=2):
 	if key in struct:
 		return struct[key]
@@ -29,6 +15,18 @@ def find_key(struct, key, searching_deep=2):
 		result = None
 	return result
 
+site = {
+	'html': {
+		'head': {
+			'title': 'Мой сайт'
+		},
+		'body': {
+			'h2': 'Здесь будет мой заголовок',
+			'div': 'Тут, наверное, какой-то блок',
+			'p': 'А вот здесь новый абзац'
+		}
+	}
+}
 
 searching_key = 'body'
 
