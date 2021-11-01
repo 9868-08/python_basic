@@ -11,7 +11,8 @@ site = {
 	}
 }
 
-def find_key (struct, key, searching_deep):
+
+def find_key(struct, key, searching_deep=2):
 	if key in struct:
 		return struct[key]
 
@@ -20,7 +21,7 @@ def find_key (struct, key, searching_deep):
 			print('достингута максимальная глубина поиска')
 			return None
 		if isinstance(sub_struct, dict):
-			searching_deep -=1
+			searching_deep -= 1
 			result = find_key(sub_struct, key, searching_deep)
 			if result:
 				break
@@ -28,9 +29,10 @@ def find_key (struct, key, searching_deep):
 		result = None
 	return result
 
+
 searching_key = 'body'
 
-value = find_key(site, searching_key, searching_deep = 2)
+value = find_key(site, searching_key)
 if value:
 	print(value)
 else:
