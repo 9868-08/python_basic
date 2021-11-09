@@ -1,13 +1,10 @@
-def my_zip(def_str1, def_str2):
-	last_str = popout(def_str1)
-	last_set = popout(def_str2)
-	return last_str, last_set
+def shortest_sequence_range(*args):
+    return range(len(sorted(args, key=len)[0]))
 
-def popout(str):
-	n = len(str) - 1
-	front = str[n:]
-	back = str[:n]
-	return front, back
+
+def my_zip(first, second):
+    ans = ((first[i], second[i]) for i in shortest_sequence_range(first, second))
+    return ans
 
 input_sring1 = 'abcd'
 input_sring2 = [10, 20, 30, 40]
