@@ -11,4 +11,7 @@ site = {
     }
 }
 
-# TODO здесь писать код
+quantity = int(input('Количество сайтов: '))
+name = input('Введите название продукта для нового сайта: ')
+print('Сайт для',name,':\nsite = {')
+print(site)

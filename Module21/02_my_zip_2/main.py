@@ -10,9 +10,8 @@ input_sring1 = 'abcd'
 input_sring2 = [10, 20, 30, 40]
 result_set = []
 
-for i in input_sring1:
-	tmp = (my_zip(input_sring1, input_sring2))
-	input_sring1 = (tmp[0][1])
-	input_sring2 = (tmp[1][1])
-	result_set.append((tmp[0][0], tmp[1][0]))
-print(result_set)
+print(my_zip(input_sring1, input_sring2))
+
+'''for i in my_zip(my_zip(input_sring1, input_sring2)):
+    print(i)
+'''
