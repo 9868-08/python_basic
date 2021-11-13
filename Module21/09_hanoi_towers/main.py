@@ -1,10 +1,13 @@
-disk_count = int(input('Введите количество дисков: '))
-set_1=[]
-set_2=[]
-set_3=[]
-for i in range(1, disk_count+1):
-	set_1.append(i)
-print('Даны пирамиды', set_1,set_2,set_3)
-for i in range(1, disk_count+1):
+def moveTower(height,fromPole, toPole, withPole):
+    if height >= 1:
+        moveTower(height-1,fromPole,withPole,toPole)
+        moveDisk(fromPole,toPole)
+        moveTower(height-1,withPole,toPole,fromPole)
+    #print(withPole)
 
-#	print('Переложить диск 1 со стержня номер', i, 'на стержень номер 2')
+def moveDisk(fp,tp):
+    print("moving disk from",fp,"to",tp)
+
+
+moveTower(3,"A","B","C")
+
