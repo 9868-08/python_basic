@@ -1,10 +1,14 @@
+def print_site(site,quantity,name):
+    print('Сайт для', name, ':\nsite = {')
+    print(site.format(name))
+
 site = {
     'html': {
         'head': {
             'title': 'Куплю/продам телефон недорого'
         },
         'body': {
-            'h2': 'У нас самая низкая цена на iphone',
+            'h2': 'У нас самая низкая цена на {}',
             'div': 'Купить',
             'p': 'продать'
         }
@@ -12,6 +16,6 @@ site = {
 }
 
 quantity = int(input('Количество сайтов: '))
-name = input('Введите название продукта для нового сайта: ')
-print('Сайт для',name,':\nsite = {')
-print(site)
+for i_site in range(0,quantity):
+    name = input('Введите название продукта для нового сайта: ')
+    print_site(site,quantity,name)
