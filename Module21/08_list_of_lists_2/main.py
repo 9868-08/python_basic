@@ -1,15 +1,15 @@
-def list_exposure (list):
-    result=[]
-    for i_element in list:
-        if type(i_element) != list:
-            print('добавляется', i_element)
-            result.append(i_element)
+def flatten(a_list):
+    result = []
+    for e in a_list:
+        if isinstance(e, int):
+            result.append(e)
         else:
-            list_exposure(i_element)
+            result.extend(flatten(e))
     return result
 
 
 nice_list = [1, 2, [3, 4], [[5, 6, 7], [8, 9, 10]],
              [[11, 12, 13], [14, 15], [16, 17, 18]]]
-print(list_exposure(nice_list))
+
+print(delattr(nice_list))
 
