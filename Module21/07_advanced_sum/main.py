@@ -1,14 +1,15 @@
-def my_sum(input_list):
-	result = 0
-	for i_element in input_list:
-		if type(i_element) != list:
-			print('добавляется', i_element)
-			result += i_element
-		else:
-			for j_element in i_element:
-				print('добавляется', j_element)
-				result += j_element
-	return result
+def my_sum(*args):
+    total_sum = 0
+    for i_elem in args: # идём циклом по елементам в args
+        if isinstance(i_elem, int):  # если объект класса инт - добавляем к сумме
+            total_sum += i_elem
+        elif isinstance(i_elem, (list, tuple)):  # если тупл - идём циклом по туплу, и к сумме прибавляем то, что вернётся от рекурсивного вызова my_sum
+            for x in i_elem:
+                total_sum += my_sum(x)
+            # Вложенный цикл можно заменить на одну строку кода
+            # total_sum += my_sum(*i_elem)
+
+    return total_sum
 
 
-my_sum([[1, 2, [3]], [1], 3])
+print(my_sum([[1, 2, [3]], [1], 3]))
