@@ -13,10 +13,16 @@ def make_site(name):  # name - имя товара
     return struct_site  # делаем возврат
 
 # функция change_value будет идти по struct_site и заменять по ключу title строку на строку выше
-def change_value(struct_site, 'title', new_title):
-    for i_key,i_value in struct_site:
-        if i_key == 'title':
-            struct_site[i_key] = new_title
+def change_value(struct, key, value):
+    if key in struct:
+        struct[key] = value
+    else:
+        for sub_struct in struct.values():
+            if isinstance(sub_struct, dict):
+                change_value(sub_struct, key, value)
+
+    return struct
+
 
 site = {
     'html': {
