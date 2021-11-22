@@ -28,6 +28,15 @@ students = {
 	return [value for index, value in dict(iter_obj, start=0) if isPrime(index)]
 '''
 
+def shortest_sequence_range(*args):
+    return range(len(sorted(args, key=len)[0]))
+
+
+def my_zip(first, second):
+    ans = ((first[i], second[i]) for i in shortest_sequence_range(first, second))
+    return ans
+
+
 def crypto(iter_obj):
     return [value for index, value in enumerate(iter_obj, start=0) if is_prime(index)]
 

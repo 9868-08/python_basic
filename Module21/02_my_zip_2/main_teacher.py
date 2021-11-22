@@ -6,12 +6,9 @@ def my_zip(first, second):
     ans = ((first[i], second[i]) for i in shortest_sequence_range(first, second))
     return ans
 
+
 input_sring1 = 'abcd'
 input_sring2 = [10, 20, 30, 40]
-result_set = []
+result_set = my_zip(input_sring1,input_sring2)
+print(result_set)
 
-print(my_zip(input_sring1, input_sring2))
-
-'''for i in my_zip(my_zip(input_sring1, input_sring2)):
-    print(i)
-'''
