@@ -28,11 +28,12 @@ for char in data.lower():
             if char not in letters_dict:
                 letters_dict[char] = 0
             letters_dict[char] += 1
+print(letters_dict)
 char_min = ''
-char_min_count = 0
+char_min_count = 1
 for char in letters_dict:
-	if letters_dict[char] > char_min_count:
+	if letters_dict[char] < char_min_count:
 		char_min_count == letters_dict[char]
-		print(letters_dict[char])
+		print('letters_dict[char]=', letters_dict[char],'char=',char)
 		char_min == 'char'
 print(char, char_min_count)
