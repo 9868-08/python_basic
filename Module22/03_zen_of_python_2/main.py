@@ -1,38 +1,63 @@
-input_file = open('zen.txt', 'r')
-data = input_file.read()
-letter_num = 0
-word_num = 0
-line_num = 0
-'''abc = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
-abc_num_dict = dict ()
-for i_sym in abc:
-	abc_num_dict[i_sym] = 0
-'''
-for i_sym in data:
-	if i_sym == '\n':
-		line_num += 1
-	elif i_sym == ' ':
-		word_num += 1
-	else:
-		letter_num += 1
+import os
 
-print('В тексте', letter_num, 'символов', word_num, 'слов', line_num, 'строк')
-input_file.close()
 
-# Дополнительно: выведите на экран букву, которая встречается в тексте наименьшее количество раз
-letters_dict = dict()
-for char in data.lower():
-	if 'a' <= char <= 'z':
-		if char not in letters_dict:
-			letters_dict[char] = 0
-		letters_dict[char] += 1
-print(letters_dict)
+def analyse_line(letters_dict, line):
+    char_count = 0
+    for char in line.lower():
+        if 'a' <= char <= 'z':
+            if char not in letters_dict:
+                letters_dict[char] = 0
+            letters_dict[char] += 1
+            char_count += 1
+    words_count = len(line.split(' '))
+    return char_count, words_count
 
-keys = list(letters_dict.keys())
-char_min = keys[0]
-char_min_count = letters_dict[keys[0]]
-for i_key in keys:
-	if letters_dict[i_key] < char_min_count:
-		char_min_count = letters_dict[i_key]
-		char_min = i_key
-print('буква', char_min, 'встречается наименьшее количество раз - ', char_min_count)
+
+def get_file_path(file_name):
+    return os.path.abspath(os.path.join('.', file_name))
+
+
+def get_lines(file_name):
+    file_path = get_file_path(file_name)
+    out = []
+    with open(file_path, 'r') as input_file:
+        out += input_file.readlines()[::-1]
+
+    return out
+
+
+def output(char_count, words_count, lines_count, least_freq_char):
+    print("Количество букв в файле:", char_count)
+    print("Количество слов в файле:", words_count)
+    print("Количество строк в файле:", lines_count)
+
+    print("Наиболее редкая буква:", least_freq_char)
+
+
+def get_min_freq_char(items):
+    min_freq = 0
+    min_freq_char = ''
+    for item in items:
+        if item[1] < min_freq:
+            min_freq = item[1]
+            min_freq_char = item[0]
+    return min_freq_char
+
+
+def main(input_filename):
+    lines_count = 0
+    char_count = 0
+    words_count = 0
+    letters_dict = dict()
+    for line in get_lines(input_filename):
+        chars_in_line, words_in_line = analyse_line(letters_dict, line)
+        char_count += chars_in_line
+        words_count += words_in_line
+        lines_count += 1
+
+    least_freq_char = get_min_freq_char(letters_dict.items())
+
+    output(char_count, words_count, lines_count, least_freq_char)
+
+
+main('zen.txt')
