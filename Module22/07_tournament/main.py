@@ -1,13 +1,18 @@
-def sorted_dict (dict):
+def sorted_dict (def_dict):
+	keys = list(def_dict)
 	result_dict = dict()
-	i_value_max = 0
-	for i_key in dict:
-		if i_key > i_value_max:
-			i_value_max = i_key
-		print('i_key=', i_key, 'i_value=', dict[i_key] )
-		result_dict[i_key] = dict[i_key]
-	print(i_value_max, result_dict)
-	return
+	i_value_max = keys[0]
+	i_value_max_prev = keys[0]
+	for j in def_dict:
+		for i in def_dict:
+			if i > i_value_max and not i == j and not i == i_value_max_prev:
+				i_value_max = i
+		result_dict[i_value_max] = def_dict[i_value_max]
+		i_value_max_prev = i_value_max
+		i_value_max = keys[0]
+	#		i_value_max_prev = i_value_max
+	print(i_value_max, result_dict, i_value_max_prev)
+	return result_dict
 
 input_file = open('first_tour.txt', 'r')
 output_file = open('second_tour.txt', 'w')
@@ -19,7 +24,8 @@ for i_line in input_file:
 	i_line = i_line.split(' ')
 	if k == 1:
 		continue
-	result[int(i_line[2])] = i_line[1][0] + '.' + i_line[0]
+	if not result[int(i_line[2])]:
+		result[int(i_line[2])] = i_line[1][0] + '.' + i_line[0]
 
 count = 1
 tmp = ""
@@ -29,5 +35,5 @@ for i_key in sorted(result, reverse=True):
 	output_file.write(str(tmp))
 	output_file.write('\n')
 	count += 1
-print(sorted_dict(result))
+#print('sorted_dict=', sorted_dict(result))
 input_file.close()
