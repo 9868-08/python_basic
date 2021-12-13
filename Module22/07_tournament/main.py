@@ -1,39 +1,38 @@
-def sorted_dict (def_dict):
-	keys = list(def_dict)
-	result_dict = dict()
-	i_value_max = keys[0]
-	i_value_max_prev = keys[0]
-	for j in def_dict:
-		for i in def_dict:
-			if i > i_value_max and not i == j and not i == i_value_max_prev:
-				i_value_max = i
-		result_dict[i_value_max] = def_dict[i_value_max]
-		i_value_max_prev = i_value_max
-		i_value_max = keys[0]
-	#		i_value_max_prev = i_value_max
-	print(i_value_max, result_dict, i_value_max_prev)
-	return result_dict
+import os
 
-input_file = open('first_tour.txt', 'r')
-output_file = open('second_tour.txt', 'w')
-result = ''
-k = 0
-result = dict()
-for i_line in input_file:
-	k += 1
-	i_line = i_line.split(' ')
-	if k == 1:
-		continue
-	if not result[int(i_line[2])]:
-		result[int(i_line[2])] = i_line[1][0] + '.' + i_line[0]
+def get_file_path(file_name):
+    return os.path.abspath(os.path.join('.', file_name))
 
-count = 1
-tmp = ""
-for i_key in sorted(result, reverse=True):
-	tmp = count, ')', result[i_key], i_key
-	print(tmp)
-	output_file.write(str(tmp))
-	output_file.write('\n')
-	count += 1
-#print('sorted_dict=', sorted_dict(result))
-input_file.close()
+def get_input(file_path):
+    with open(file_path, 'r') as input_file:
+        k_score = int(input_file.readline())
+
+        persons = []
+        for line in input_file.readlines()[1:]:
+            last_name, first_name, score = line.split(' ')
+            score = int(score)
+            persons.append((first_name, last_name, score))
+
+    return k_score, persons
+
+def write_output(output_file_path, sorted_persons):
+    with open(output_file_path, 'w') as output_file:
+        output_file.write('{:d}\n'.format(len(sorted_persons)))
+
+        for i, (first_name, last_name, score) in enumerate(sorted_persons):
+            output_file.write('{:d}) {:s}. {:s} {:d}\n'.format(i + 1, first_name, last_name, score))
+
+def get_person_score(person):
+    return person[2]
+
+def main(input_filename, output_filename):
+    input_file_path = get_file_path(input_filename)
+    output_file_path = get_file_path(output_filename)
+
+    k_score, persons = get_input(input_file_path)
+    persons = [p for p in persons if p[2] > k_score]
+    persons.sort(key=get_person_score, reverse=True)
+
+    write_output(output_file_path, persons)
+
+main('first_tour.txt', 'second_tour.txt')
