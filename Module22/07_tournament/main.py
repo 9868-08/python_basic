@@ -30,8 +30,8 @@ def main(input_filename, output_filename):
     output_file_path = get_file_path(output_filename)
 
     k_score, persons = get_input(input_file_path)
-    persons = [p for p in persons if not isinstance(p[1], p else (p[1],p))
-
+    persons = [(p if not isinstance(p[1], int) else (p[1], p)) for p in persons if not isinstance(p[1], int)]
+    print(persons)
     persons.sort(key=get_person_score, reverse=True)
 
     write_output(output_file_path, persons)
