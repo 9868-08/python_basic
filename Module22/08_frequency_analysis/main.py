@@ -1,14 +1,9 @@
 import os
 
 
-def get_file_path(file_name):
-    return os.path.abspath(os.path.join('.', file_name))
-
-
 def get_lines(file_name):
-    file_path = get_file_path(file_name)
     out = []
-    with open(file_path, 'r') as input_file:
+    with open(file_name, 'r') as input_file:
         out += input_file.readlines()[::-1]
     return out
 
@@ -37,14 +32,24 @@ def get_min_freq_char(items):
 
 
 def print_results(char_count, words_count, lines_count, least_freq_char, letters_dict, file_out):
-    filename_output = str(get_file_path(file_out)) + file_out
-    print(filename_output)
-    print("Количество букв в файле:", char_count)
-    write_to_file(filename_output, "Количество букв в файле:" + char_count)
-    print("Количество слов в файле:", words_count)
-    print("Количество строк в файле:", lines_count)
-    print("Наиболее редкая буква:", least_freq_char)
+#    fp = open(file_out, 'w')
+    out_text = "Количество букв в файле:" + str(char_count) + "\n"
+#    file_out.write(out_text)
+#    print ('out_text=',out_text)
+    out_text = "Количество слов в файле:" + str(words_count) + "\n"
+#    file_out.write(out_text)
+#    print ('out_text=',out_text)
+    out_text = "Количество строк в файле:" + str(lines_count) + "\n"
+#    file_out.write(out_text)
+#    print ('out_text=',out_text)
+    out_text = "Наиболее редкая буква:" + least_freq_char + "\n"
+#    print('out_text=', out_text)
+    for i_word in letters_dict:
+        out_text = i_word + ' ' + str(round(letters_dict[i_word] / char_count, 3)) + '\n'
+#        print('out_text=', out_text)
+        file_out.write(out_text)
     return
+
 
 def count_all_symbols(input_filename):
     char_count = 0
@@ -52,15 +57,18 @@ def count_all_symbols(input_filename):
     for line in get_lines(input_filename):
         chars_in_line, words_in_line = analyse_line(letters_dict, line)
         char_count += chars_in_line
-        print (letters_dict)
+    print(letters_dict)
     return char_count
 
+
 def main(input_filename, out_file):
-    file_for_write = open(out_file, 'w')
+    input_filename = os.path.abspath(os.path.join('.', input_filename))
+    file_for_write = open(os.path.abspath(os.path.join('.', out_file)), 'w')
     lines_count = 0
     char_count = 0
     words_count = 0
     letters_dict = dict()
+
     for line in get_lines(input_filename):
         chars_in_line, words_in_line = analyse_line(letters_dict, line)
         char_count += chars_in_line
