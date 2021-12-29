@@ -1,6 +1,17 @@
 import os
 
 
+def sort_dict(def_dict):
+    print (list (def_dict)[1])
+    max = 0
+   # print (max)
+    for i in def_dict:
+        if def_dict[i] > max:
+            max = def_dict[i]
+        #print('i=',i, 'def_dict[i]=', def_dict[i])
+    return max
+
+
 def get_lines(file_name):
     out = []
     with open(file_name, 'r') as input_file:
@@ -32,22 +43,23 @@ def get_min_freq_char(items):
 
 
 def print_results(char_count, words_count, lines_count, least_freq_char, letters_dict, file_out):
-#    fp = open(file_out, 'w')
+    #    fp = open(file_out, 'w')
     out_text = "Количество букв в файле:" + str(char_count) + "\n"
-#    file_out.write(out_text)
-#    print ('out_text=',out_text)
+    #    file_out.write(out_text)
+    #    print ('out_text=',out_text)
     out_text = "Количество слов в файле:" + str(words_count) + "\n"
-#    file_out.write(out_text)
-#    print ('out_text=',out_text)
+    #    file_out.write(out_text)
+    #    print ('out_text=',out_text)
     out_text = "Количество строк в файле:" + str(lines_count) + "\n"
-#    file_out.write(out_text)
-#    print ('out_text=',out_text)
+    #    file_out.write(out_text)
+    #    print ('out_text=',out_text)
     out_text = "Наиболее редкая буква:" + least_freq_char + "\n"
-#    print('out_text=', out_text)
+    #    print('out_text=', out_text)
     for i_word in letters_dict:
         out_text = i_word + ' ' + str(round(letters_dict[i_word] / char_count, 3)) + '\n'
-#        print('out_text=', out_text)
+        print('out_text=', out_text)
         file_out.write(out_text)
+    sort_dict(letters_dict)
     return
 
 
@@ -79,6 +91,7 @@ def main(input_filename, out_file):
     print_results(count_all_symbols(input_filename), words_count, lines_count, least_freq_char, letters_dict,
                   file_for_write)
     #    print (count_all_symbols(input_filename))
+    print(sort_dict(letters_dict))
     return
 
 
