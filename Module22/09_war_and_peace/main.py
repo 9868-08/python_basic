@@ -1,14 +1,11 @@
-import csv, io, sys, zipfile
+import zipfile
+import os
+import time
+import chardet
 
-zip_file = zipfile.ZipFile('voyna-i-mir.zip')
-items_file  = zip_file.open('voyna-i-mir.txt', 'r')
-# items_file.readable = lambda: True
-# items_file.writable = lambda: False
-# items_file.seekable = lambda: False
-# items_file.read1 = items_file.read
-items_file  = io.TextIOWrapper(items_file)
-
-for idx, row in enumerate(csv.DictReader(items_file)):
-    print('Processing row {0} -- row = {1}'.format(idx, row))
-
-
+import zipfile
+with zipfile.ZipFile("voyna-i-mir.zip") as z:
+   with z.open('voyna-i-mir.txt') as f:
+    for line in f:
+#        print (chardet.detect(line))
+        print (line)
