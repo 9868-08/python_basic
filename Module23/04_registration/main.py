@@ -20,7 +20,11 @@ def line_check(line):
     return
 
 
-class custom_exception(Exception):
+class custom_exception_list_count(Exception):
+    pass
+
+
+class custom_exception_field_count(Exception):
     pass
 
 
@@ -39,6 +43,7 @@ class custom_exception_mail(Exception):
 class custom_exception_age(Exception):
     pass
 
+
 try:
     file_input = open('registrations.txt', 'r')
     file_ouput_bad = open('registrations_bad.log', 'w')
@@ -48,20 +53,24 @@ except FileNotFoundError:
 
 summ = 0
 
-try:
+for i_line in file_input:
+    try:
+        line_check(i_line)
+        file_ouput_good.write(i_line)
 
-    for i_line in file_input:
-        print(line_check(i_line))
-except custom_exception_short_line:
-    result = str(line) + '   ' + str(len(line)) + ' символов'
-    print (result)
-except custom_exception_isalpha:
-    result = str(line) + '   ' + ' содержит не только буквы'
-    print (result)
-except custom_exception_mail:
-    result = str(line) + '   ' + ' не корректно указан e-mail'
-    print (result)
-except custom_exception_age:
-    result = str(line) + '   ' + ' не корректно указан возраст'
-    print (result)
-
+    except custom_exception_short_line:
+        i_line = str(i_line[:len(i_line)-1])
+        result = str(i_line) + '        ' + 'запись не полная\n'
+        file_ouput_bad.write(result)
+    except custom_exception_isalpha:
+        i_line = str(i_line[:len(i_line)-1])
+        result = str(i_line) + '        ' + ' содержит не только буквы\n'
+        file_ouput_bad.write(result)
+    except custom_exception_mail:
+        i_line = str(i_line[:len(i_line)-1])
+        result = str(i_line) + '        ' + ' не корректно указан e-mail\n'
+        file_ouput_bad.write(result)
+    except custom_exception_age:
+        i_line = str(i_line[:len(i_line)-1])
+        result = str(i_line) + '        ' + ' не корректно указан возраст\n'
+        file_ouput_bad.write(result)
