@@ -10,6 +10,6 @@ lines = file.readlines()
 for i_line in lines:
     try:
         print(i_line[:len(i_line)-1], '=', eval(str(i_line)))
-    except:
-        print("что-то не так в строке", i_line, end='')
+    except SyntaxError:
+        print("ошибка синтаксиса в строке: ", i_line, end='')
 file.close()
