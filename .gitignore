@@ -1,5 +1,5 @@
 # exclude everything
-.idea/
+.idea/misc.xml
 venv/
 python.txt
 .idea/workspace.xml
