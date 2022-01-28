@@ -23,8 +23,10 @@ for i_line in lines:
     try:
         num1 = int(i_line_split[0])
         num2 = int(i_line_split[2])
-    except (ValueError, IndexError):
+    except (ValueError, IndexError, ZeroDivisionError):
         print('в строке: ', i_line, 'даны некорректные числовые значения')
+#    except ZeroDivisionError:
+#        print('в строке: ', i_line, 'деление на нуль')
     else:
         print(i_line, '=', numeric(num1, i_line_split[1], num2))
 file.close()
