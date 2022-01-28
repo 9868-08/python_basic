@@ -4,7 +4,12 @@ def numeric(num1, operation, num2):
     elif operation == '-':
         result = num1 - num2
     elif operation == '/':
-        result = num1 / num2
+        try:
+            result = num1 / num2
+        except ZeroDivisionError:
+            print('в строке: ', i_line, 'деление на нуль')
+            result = "infinity"
+
     elif operation == '%':
         result = num1 % num2
     return result
@@ -23,10 +28,8 @@ for i_line in lines:
     try:
         num1 = int(i_line_split[0])
         num2 = int(i_line_split[2])
-    except (ValueError, IndexError, ZeroDivisionError):
+    except (ValueError, IndexError):
         print('в строке: ', i_line, 'даны некорректные числовые значения')
-#    except ZeroDivisionError:
-#        print('в строке: ', i_line, 'деление на нуль')
     else:
-        print(i_line, '=', numeric(num1, i_line_split[1], num2))
+        print(i_line[:len(i_line)-1], '=', numeric(num1, i_line_split[1], num2))
 file.close()
