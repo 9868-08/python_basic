@@ -12,21 +12,24 @@ class Student:
     def info(self):
         print('{}   {}   {} {}'.format(self.FI, self.group, self.progress, self.average))
 
+    def get_average_score(self):
+        for i  in range (0,5):
+            print (self.progress)
 
-def student_sort(student_sort_list):
-    def_max = 0
-    student_def = dict()
-    tmp_set = list()
-    for j_student in student_sort_list:
-        if j_student.average in student_def:
-            tmp_set.append(j_student)
-            print('найден дубль по среднему баллу', j_student.FI)
-            student_def[j_student.average] = tmp_set
 
-        else:
-            student_def[j_student.average] = j_student
-#    print('student_sort result =', student_def[student_sort_list[0].average])
-    return student_def
+
+def student_sort(students):   #стандартная сортировка по оценкам.
+    qty_students = len(students)
+    for i in range(1, qty_students):
+        fl = False
+        for j in range(qty_students - 1):
+            if students[j].average > students[j + 1].average:
+                students[j], students[j + 1] = students[j + 1], students[j]
+                fl = True
+        if fl:
+            break
+    return students
+
 
 
 # group = input('Заполняется ведомость группы: ')
@@ -41,7 +44,7 @@ for i_num in range(0, 10):
     current_student.group = group
     average = 0
     for j_num in range(0, 5):
-        current_student.progres = []
+        current_student.progress = []
         progress = randint(2, 5)
         current_student.progress.append(progress)
         average += progress
@@ -52,4 +55,4 @@ sorted_students = student_sort(students_list)
 
 for i_student in sorted_students:
     if type(i_student) != list:
-        print(sorted_students[i_student], 'средний бал', i_student, )
+        print(i_student.FI, 'средний бал', i_student.average )
