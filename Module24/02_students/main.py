@@ -2,10 +2,12 @@ from random import randint
 
 
 class Student:
-    FI = str()
-    group = str()
-    progress = list()
-    average = 0
+    def init(self, name, FI, group, progress, averange) -> None:
+        self.name = name
+        self.FI = str()
+        self.group = str()
+        self.progress = list()
+        self.average = 0
 
     def info(self):
         print('{}   {}   {} {}'.format(self.FI, self.group, self.progress, self.average))
