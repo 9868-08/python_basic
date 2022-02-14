@@ -12,9 +12,9 @@ class Student:
     def info(self):
         print('{}   {}   {} {}'.format(self.FI, self.group, self.progress, self.average))
 
-    def get_average_score(self):
+'''    def get_average_score(self):
         for i  in range (0,5):
-            print (self.progress)
+            print (self.progress)'''
 
 
 
@@ -50,9 +50,10 @@ for i_num in range(0, 10):
         average += progress
     current_student.average = average / 5
     students_list.append(current_student)
-    current_student.info()
+#    current_student.info()
 sorted_students = student_sort(students_list)
 
+print("отсортированный скисок:")
 for i_student in sorted_students:
     if type(i_student) != list:
         print(i_student.FI, 'средний бал', i_student.average )
