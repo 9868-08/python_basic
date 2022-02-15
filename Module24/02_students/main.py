@@ -50,7 +50,7 @@ for i_num in range(0, 10):
         average += progress
     current_student.average = average / 5
     students_list.append(current_student)
-#    current_student.info()
+    current_student.info()
 sorted_students = student_sort(students_list)
 
 print("отсортированный скисок:")
