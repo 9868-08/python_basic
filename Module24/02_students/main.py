@@ -2,28 +2,26 @@ from random import randint
 
 
 class Student:
-    def init(self, name, FI, group, progress, averange) -> None:
-        self.name = name
-        self.FI = str()
-        self.group = str()
-        self.progress = list()
-        self.average = 0
+    def __init__(self, full_name="имя студента", group_number="Группа-1", scores=[]):
+        self.full_name = full_name
+        self.group_number = group_number
+        self.scores = scores
 
-    def info(self):
-        print('{}   {}   {} {}'.format(self.FI, self.group, self.progress, self.average))
+    def get_average_score(self):
+        if len(self.scores) > 0:
+            return sum(self.scores) / len(self.scores)
+        return 0
 
-'''    def get_average_score(self):
-        for i  in range (0,5):
-            print (self.progress)'''
-
+    def get_info_str(self):
+        return ' '.join([self.full_name, 'группа:', str(self.group_number)])
 
 
-def student_sort(students):   #стандартная сортировка по оценкам.
+def student_sort(students):  # стандартная сортировка по оценкам.
     qty_students = len(students)
     for i in range(1, qty_students):
         fl = False
         for j in range(qty_students - 1):
-            if students[j].average > students[j + 1].average:
+            if students[j].get_average_score() > students[j + 1].get_average_score():
                 students[j], students[j + 1] = students[j + 1], students[j]
                 fl = True
         if fl:
@@ -31,29 +29,28 @@ def student_sort(students):   #стандартная сортировка по 
     return students
 
 
-
 # group = input('Заполняется ведомость группы: ')
 group = "Группа-1"
 students_list = list()
-# progress = list()
+# scores = list()
 
-for i_num in range(0, 10):
+for i_num in range(0, 3):       # должно быть for i_num in range(0, 10):
     current_student = Student()  # экземпляр класса Student
-    current_student.progress = []
+    current_student.scores = []
     current_student.FI = "Иванов Иван Иваныч " + str(i_num) + "-й"
     current_student.group = group
     average = 0
-    for j_num in range(0, 5):
-        current_student.progress = []
-        progress = randint(2, 5)
-        current_student.progress.append(progress)
-        average += progress
+    current_student.scores = []
+    for j_num in range(0, 1):   # Должно быть  for j_num in range(0, 5):
+        scores = randint(2, 5)
+        current_student.scores.append(scores)
+        average += scores
     current_student.average = average / 5
     students_list.append(current_student)
-    current_student.info()
+    print(current_student.get_info_str())
 sorted_students = student_sort(students_list)
 
-print("отсортированный скисок:")
+print("отсортированный список:")
 for i_student in sorted_students:
     if type(i_student) != list:
-        print(i_student.FI, 'средний бал', i_student.average )
+        print(i_student.FI, 'средний бал', i_student.get_average_score())
