@@ -31,6 +31,19 @@ class Man:
         def_man.hungry -= 10
         return def_man
 
+    def def_action(self, def_man, def_action):
+        if def_man.hungry<0:
+            print("{} умер".format(def_man.name))
+        if def_action == 1:
+            print("на {} день они пошли работать".format(day))
+            neighbor1 = neighbor1.def_work(neighbor1)
+            neighbor2 = neighbor2.def_work(neighbor2)
+        elif action == 2:
+            print("на {} день они поели".format(day))
+            neighbor1 = neighbor1.def_eat(neighbor1)
+            neighbor2 = neighbor2.def_eat(neighbor2)
+
+        return def_man
 
 class House:
 
@@ -48,43 +61,32 @@ neighbor2 = Man("Сережа")
 my_house = House()
 neighbor1.house = my_house
 neighbor2.house = my_house
+house_residents = [neighbor1, neighbor2]
 
 
-day = 0
+day = 1
 while day < 365:
-    action = (randrange(6))
-    #    print("action=", action)
-    if neighbor1.hungry < 20:
-        print("на {} день первый сосед покушал, так как проголодался".format(day, neighbor1.name))
-        neighbor1 = neighbor1.def_eat(neighbor1)
-    elif neighbor2.hungry < 20:
-        print("на {} день второй сосед покушал, так как проголодался".format(day, neighbor2.name))
-        neighbor2 = neighbor2.def_eat(neighbor2)
-    elif my_house.fridge < 10:
-        print("на {} день они пошли в магазин".format(day))
-        neighbor1 = neighbor1.def_buy(neighbor1)
-        neighbor2 = neighbor2.def_buy(neighbor2)
-    elif my_house.nightstand_with_money < 50:
-        print("на {} день они пошли работать так как кончились деньги".format(day))
-        neighbor1 = neighbor1.def_work(neighbor1)
-        neighbor2 = neighbor2.def_work(neighbor2)
-    elif action == 1:
-        print("на {} день они пошли работать".format(day))
-        neighbor1 = neighbor1.def_work(neighbor1)
-        neighbor2 = neighbor2.def_work(neighbor2)
-    elif action == 2:
-        print("на {} день они поели".format(day))
-        neighbor1 = neighbor1.def_eat(neighbor1)
-        neighbor2 = neighbor2.def_eat(neighbor2)
-    else:
-        print("на {} день они играли".format(day))
-        neighbor1 = neighbor1.def_game(neighbor1)
-        neighbor2 = neighbor2.def_game(neighbor2)
+    for resident in house_residents:
+        action = (randrange(6))
+        #    print("action=", action)
+        if resident.hungry < 20:
+            print("на {} день {} покушал, так как проголодался".format(day, neighbor1.name))
+            resident = resident.def_eat(resident)
+        elif my_house.fridge < 10:
+            print("на {} день {} пошел в магазин".format(day,resident.name))
+            resident = resident.def_buy(resident)
+        elif my_house.nightstand_with_money < 50:
+            print("на {} день {} пошел работать так как кончились деньги".format(day,resident.name))
+            resident = resident.def_work(resident)
+        else:
+            print("на {} день они играли".format(day))
+            neighbor1 = neighbor1.def_game(neighbor1)
+            neighbor2 = neighbor2.def_game(neighbor2)
 
-    neighbor1.info()
-    neighbor2.info()
-    my_house.info()
-    day += 1
+        neighbor1.info()
+        neighbor2.info()
+        my_house.info()
+        day += 1
 print("========= на {0} программа закончила работу =========".format(day))
 neighbor1.info()
 neighbor2.info()
