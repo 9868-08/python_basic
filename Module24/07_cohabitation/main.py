@@ -76,14 +76,18 @@ while day < 365:
         elif my_house.nightstand_with_money < 50:
             print("на {} день {} пошел работать так как кончились деньги".format(day,resident.name))
             resident = resident.def_work(resident)
+        elif action == 1:
+            resident = resident.def_work(resident)
+        elif action == 2:
+            resident = resident.def_eat(resident)
         else:
             print("на {} день они играли".format(day))
             neighbor1 = neighbor1.def_game(neighbor1)
             neighbor2 = neighbor2.def_game(neighbor2)
 
-        neighbor1.info()
-        neighbor2.info()
-        my_house.info()
+#        neighbor1.info()
+#        neighbor2.info()
+#        my_house.info()
         day += 1
 print("========= на {0} программа закончила работу =========".format(day))
 neighbor1.info()
