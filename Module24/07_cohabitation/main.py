@@ -35,13 +35,11 @@ class Man:
         if def_man.hungry<0:
             print("{} умер".format(def_man.name))
         if def_action == 1:
-            print("на {} день они пошли работать".format(day))
-            neighbor1 = neighbor1.def_work(neighbor1)
-            neighbor2 = neighbor2.def_work(neighbor2)
+            print("на {} день они пошел работать".format(day))
+            def_man = def_man.def_work(def_man)
         elif action == 2:
-            print("на {} день они поели".format(day))
-            neighbor1 = neighbor1.def_eat(neighbor1)
-            neighbor2 = neighbor2.def_eat(neighbor2)
+            print("на {} день {} поел".format(day, def_man.name))
+            def_man = def_man.def_eat(def_man)
 
         return def_man
 
