@@ -54,13 +54,18 @@ class House:
 
 
 
-neighbor1 = Man("Артем")
+my_house = House()
+neighbor1 = Man("Артём", my_house)
+neighbor2 = Man("Сергей", my_house)
+house_residents = [neighbor1, neighbor2]
+
+'''neighbor1 = Man("Артем")
 neighbor2 = Man("Сережа")
 my_house = House()
 neighbor1.house = my_house
 neighbor2.house = my_house
 house_residents = [neighbor1, neighbor2]
-
+'''
 
 day = 1
 while day < 365:
