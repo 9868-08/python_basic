@@ -72,7 +72,7 @@ while day < 365:
     for resident in house_residents:
         action = (randrange(6))
         #    print("action=", action)
-        if resident.satiety < 20:
+        if int(resident.satiety) < 20:
             print("на {} день {} покушал, так как проголодался".format(day, neighbor1.name))
             resident = resident.def_eat()
         elif my_house.fridge < 10:
