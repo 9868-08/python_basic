@@ -33,7 +33,7 @@ class Man:
 
     def def_action(self, def_man, def_action):
         if def_man.satiety < 0:
-            print("{} умер".format(def_man.name))
+            print("{} умер от голода".format(def_man.name))
         if def_action == 1:
             print("на {} день они пошел работать".format(day))
             def_man = def_man.def_work(def_man)
@@ -74,7 +74,7 @@ while day < 365:
         #    print("action=", action)
         if int(resident.satiety) < 20:
             print("на {} день {} покушал, так как проголодался".format(day, neighbor1.name))
-            resident = resident.def_eat()
+            resident.def_eat()
         elif my_house.fridge < 10:
             print("на {} день {} пошел в магазин".format(day, resident.name))
             resident = resident.def_buy(resident)
