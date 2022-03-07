@@ -34,6 +34,7 @@ class Man:
     def def_action(self, def_man, def_action):
         if def_man.satiety < 0:
             print("{} умер от голода".format(def_man.name))
+            return False
         if def_action == 1:
             print("на {} день они пошел работать".format(day))
             def_man = def_man.def_work(def_man)
@@ -55,18 +56,18 @@ class House:
                                                                                       self.nightstand_with_money))
 
 
-my_house = House()
+'''my_house = House()
 neighbor1 = Man("Артём")
 neighbor2 = Man("Сергей", my_house)
-house_residents = [neighbor1, neighbor2]
+house_residents = [neighbor1, neighbor2]'''
 
-'''neighbor1 = Man("Артем")
+neighbor1 = Man("Артем")
 neighbor2 = Man("Сережа")
 my_house = House()
 neighbor1.house = my_house
 neighbor2.house = my_house
 house_residents = [neighbor1, neighbor2]
-'''
+
 day = 1
 while day < 365:
     for resident in house_residents:
