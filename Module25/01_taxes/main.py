@@ -57,7 +57,7 @@ while my_CountryHouse.worth == 0:
         print("нужно ввести число")
 #countryhouse_cost = 500  # стоимость моей дачи
 
-#print(my_appartment.tax(), my_car.tax(), my_CountryHouse.tax())
+print(my_appartment.tax(), my_car.tax(), my_CountryHouse.tax())
 my_tax = my_appartment.tax() + my_car.tax() + my_CountryHouse.tax()
 #print(my_tax)
 if debit < my_tax:
