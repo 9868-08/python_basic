@@ -9,6 +9,7 @@ class TestFailed(Exception):
         print('TestFailed exception')
         file = open('karma.log', 'w')
         file.write('TestFailed exception')
+        file.close()
         return
 
 
@@ -37,7 +38,10 @@ class Life:
     def __init__(self):
         self.target_karma = 500
         self.karma = 0
-        self.exception_list = [KillError, DrunkError, CarCrashError, GluttonyError, DepressionError]
+#        self.exception_list = [KillError, DrunkError, CarCrashError, GluttonyError, DepressionError]
+
+    def __str__(self):
+        return self.karma
 
 
 my_life = Life()
@@ -49,6 +53,8 @@ while my_life.karma < my_life.target_karma:
         else:
             my_life.karma += fate
     finally:
+        pass
 #        print(my_life.karma)
-        print("my_life.karma")
+#        print("my_life.karma")
+print(my_life.__str__())
 
