@@ -6,7 +6,7 @@ class KillError(Exception):
     pass
 
     def __init__(self):
-#        print('KillError exception')
+        #        print('KillError exception')
         file = open('karma.log', 'a')
         file.write('KillError exception\n')
         file.close()
@@ -17,7 +17,7 @@ class DrunkError(Exception):
     pass
 
     def __init__(self):
-#        print('DrunkError exception')
+        #        print('DrunkError exception')
         file = open('karma.log', 'a')
         file.write('DrunkError exception\n')
         file.close()
@@ -28,7 +28,7 @@ class CarCrashError(Exception):
     pass
 
     def __init__(self):
-#        print('CarCrashError exception')
+        #        print('CarCrashError exception')
         file = open('karma.log', 'a')
         file.write('CarCrashError exception\n')
         file.close()
@@ -39,7 +39,7 @@ class GluttonyError(Exception):
     pass
 
     def __init__(self):
-#        print('GluttonyError exception')
+        #        print('GluttonyError exception')
         file = open('karma.log', 'a')
         file.write('GluttonyError exception\n')
         file.close()
@@ -50,7 +50,7 @@ class DepressionError(Exception):
     pass
 
     def __init__(self):
-#        print('DepressionError exception')
+        #        print('DepressionError exception')
         file = open('karma.log', 'a')
         file.write('DepressionError exception\n')
         file.close()
