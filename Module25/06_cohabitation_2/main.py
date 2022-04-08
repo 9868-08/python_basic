@@ -22,27 +22,28 @@ class Entity:  # Entity - существо
         def_flat.bedside_money += 150
         return def_flat
 
-
-class Man(Entity):
-    def __init__(self):
-        super().__init__()
-        super().__str__()
-        self.name = "Anonymous Man"
-        return
-
     def eat(self):
         self.satiety += 30
-        return self
+        return
+
+
+class Man(Entity):
+    def __init__(self, def_name="anon"):
+        super().__init__()
+        super().__str__()
+        self.name = def_name
+        return
+
 
     def gaming(self):
         self.satiety += 20
 
 
 class Woman(Entity):
-    def __init__(self):
+    def __init__(self, def_name="anon"):
         super().__init__()
         super().__str__()
-        self.name = "Anonymous Woman"
+        self.name = def_name
         return
 
     def eat(self):
@@ -86,11 +87,10 @@ class Cat:
 
 
 class Flat:
-    bedside_money = 150  # деньги в тубмочке
-    dust = 0  # грязь в доме
-
-    def __init__(self):
-        pass
+    def __int__(self, bedside_money=150, dust=0):
+        self.bedside_money = bedside_money            # деньги в тубмочке
+        self.dust = dust                              # грязь в доме
+        return
 
     def __str__(self):
         print("в тумбе осталось {} денег, уровень грязи в доме: {} ".format(self.bedside_money, self.dust))
