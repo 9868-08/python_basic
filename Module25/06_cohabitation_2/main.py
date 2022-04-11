@@ -16,7 +16,6 @@ class Entity:  # Entity - существо
 
     def action(self):
         self.satiety -= 10
-        return
 
     def works(self, def_flat):
         def_flat.bedside_money += 150
@@ -24,7 +23,6 @@ class Entity:  # Entity - существо
 
     def eat(self):
         self.satiety += 30
-        return
 
 
 class Man(Entity):
@@ -32,8 +30,6 @@ class Man(Entity):
         super().__init__()
         super().__str__()
         self.name = def_name
-        return
-
 
     def gaming(self):
         self.satiety += 20
@@ -44,11 +40,9 @@ class Woman(Entity):
         super().__init__()
         super().__str__()
         self.name = def_name
-        return
 
     def eat(self):
         self.satiety += 30
-        return
 
     def works(self, def_flat):
         def_flat.dust -= 100
@@ -67,48 +61,44 @@ class Cat:
     satiety = 30
 
     def __init__(self):
-        return
+        pass
 
     def __str__(self):
         return "кто:", self.name, "сытость:", self.satiety
 
-
     def eat(self):
         self.satiety += 10
-        return
-
 
     def tears_the_wallpaper(self, def_flat):  # кот дерет обои квартиры
         def_flat.dust += 5
-        return
 
     def action(self):
         self.satiety -= 10
 
 
 class Flat:
-    def __int__(self, bedside_money=150, dust=0):
-        self.bedside_money = bedside_money            # деньги в тубмочке
-        self.dust = dust                              # грязь в доме
-        return
+    bedside_money = 150
+    dust = 0
+
+    def __init__(self):
+        pass
 
     def __str__(self):
-        print("в тумбе осталось {} денег, уровень грязи в доме: {} ".format(self.bedside_money, self.dust))
+        return "в тумбе осталось " + str(self.bedside_money) + " денег, уровень грязи в доме ", str(self.dust)
 
 
 def print_all(def_man, def_woman, def_cat, def_flat):
     print("==================   вместе живут   ==================")
-    def_man.__str__()
+    print(def_man.__str__())
     print("======================================================")
-    def_woman.__str__()
+    print(def_woman.__str__())
     print("======================================================")
-    def_cat.__str__()
+    print(def_cat.__str__())
     print("======================================================")
-    def_flat.__str__()
+    print(def_flat.__str__())
     print("======================================================")
     print("")
     print("")
-    return
 
 
 man = Man()
