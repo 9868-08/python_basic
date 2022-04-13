@@ -1,7 +1,7 @@
 def createGenerator(def_list1, def_list2, def_to_find):
     for item_1 in def_list1:
         for item_2 in def_list2:
-            yield item_1, item_2, item_1 * item_2
+            yield str(item_1) + " " + str(item_2) + " " + str(item_1 * item_2)
             if item_1 * item_2 == def_to_find:
                 print('Found!!!')
                 return
