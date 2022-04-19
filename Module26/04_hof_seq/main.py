@@ -1,6 +1,7 @@
 class qsequence:
     def __init__(self, s):
         self.s = s[:]
+        print(self.s)
 
     def __next__(self):
         try:
@@ -24,8 +25,7 @@ class qsequence:
 Q = qsequence([1, 1])
 result = list()
 for count in range(3, 15):
-    result.append(next(Q))
-print(result)
+    next(Q)
 try:
     print(Q)
 except TypeError:
