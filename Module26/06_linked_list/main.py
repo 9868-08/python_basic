@@ -4,8 +4,13 @@ class LinkedList:
 
     def __str__(self):
         print("[", end="")
+        count = 0  # количество позиций в списке
         for item in self.internal:
-            print(item, " ", end="")
+            if count != len(self.internal) -1 :
+                print(item, " ", end="")
+            else:
+                print(item, end="")
+            count += 1
         print("]", end="")
         return ""
 
@@ -27,7 +32,6 @@ class LinkedList:
                 result.append(item)
             counter += 1
         self.internal = result
-
 
 
 my_list = LinkedList()
