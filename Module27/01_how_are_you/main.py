@@ -2,7 +2,6 @@ from functools import wraps
 
 
 def how_are_you(fn):
-    @wraps(fn)
     def wrapped():
         input("как дела? ")
         print("А у меня не очень! Ладно, держи свою функцию.")
