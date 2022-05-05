@@ -8,52 +8,45 @@
 
 """
 
-import math
+
+class Square:
+    """ 2D-фигуры, а именно квадрат"""
+    def __init__(self, length):
+        self.length = length
+
+    def __str__(self) -> float:  # площадь квадрата
+        def_surface_area = self.length ** 2
+        return def_surface_area
 
 
-class MySquare:
+class SurfaceAreaMixin:
 
-    def __init__(self, side):
-        self.side = side
-
-    def __str__(self):
-        return 'сторона квадрата = ' + str(self.side)
-
-    def periphery(self):                 # периметр
-        result = self.sid * 4
-        return result
-
-    def square(self):                    # площадь
-        result = self.side**2
-        return result
+    def surface_area(self) -> float:
+        surface_area = 0
+        for surface in self.surfaces:
+            surface_area += surface.area(self)
+        return surface_area
 
 
-class MyTriangle:
-    def __init__(self, base, height):
-        self.base = base
-        self.height = height
+class Cube(Square, SurfaceAreaMixin):
+    """
+    Класс Куб. Дочерний класс от Квадрата + миксин SurfaceAreaMixin
+    Args:
+        length (float): длина стороны
+    Attributes:
+        length (float): длина стороны
+        surfaces (List[Square]): список из поверхностей куба (6 квадратов)
+    """
 
-    def __str__(self):
-        return 'сторона треугольника = ' + str(self.side) + 'высота треугольника = ' + str(self.height)
+    def __init__(self, length: float) -> None:
+        super().__init__(length)
+        self.surfaces: list[Square] = [Square, Square, Square, Square, Square, Square]
+        print(self.surfaces)
 
-    def periphery(self):                 # периметр
-        result = 2 * sqrt(self.base ** 2 - self.height ** 2)
-        return result
-
-    def square(self):                    # площадь
-        result = self.side * self.height / 2
-        return result
-
-class Cube(MySquare):
-    def __init__(self):
-        self.side = MySquare.si
+    def surface_area(self) -> float:
+        super(Cube, self).surface_area(Square.surface_area(Square))
 
 
+my_cube = Cube(2)
+print("площадь  куба = ", my_cube.surface_area())
 
-'''N_class = MyMath(1, 1)
-print(N_class)
-print("длина окружности = ", N_class.circumference_length())
-print("площадь окружности = ", N_class.circumference_square())
-print("объем куба = ", N_class.cube_volume())
-print("объем сферы = ", N_class.sphere_square())
-'''
