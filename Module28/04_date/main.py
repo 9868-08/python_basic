@@ -5,7 +5,8 @@ class Date:
         self.day = None
 
     def __str__(self):
-        return "День: " + str(self.day) +"	Месяц: " + str(self.month) + "	Год: " + str(self.year)
+        return f"День: {self.day}	месяц: {self.day}	год: {self.day}	"
+#        return "День: " + str(self.day) +"	Месяц: " + str(self.month) + "	Год: " + str(self.year)
 
     def from_string(self, input):
         x = input.split("-")
@@ -25,8 +26,3 @@ class Date:
 my_date = Date()
 my_date.from_string('32-12-2077')
 print(my_date)
-
-date = Date.from_string('10-12-2077')
-print(date)
-print(Date.is_date_valid('10-12-2077'))
-print(Date.is_date_valid('40-12-2077'))
