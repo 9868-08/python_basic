@@ -1,15 +1,31 @@
 class Date:
-    def __init__(self):
-        self.year = None
-        self.month = None
-        self.day = None
+    def __init__(self, day: int = 0, month: int = 0, year: int = 0) -> None:
+        self.year = year
+        self.month = month
+        self.day = day
 
-    def __str__(self):
-        return f"День: {self.day}	месяц: {self.day}	год: {self.day}	"
+    def __str__(self) -> str:
+        return f"День: {self.day}	месяц: {self.month}	год: {self.year}	"
 #        return "День: " + str(self.day) +"	Месяц: " + str(self.month) + "	Год: " + str(self.year)
 
-    def from_string(self, input):
-        x = input.split("-")
+
+    def is_date_valid(self, date: str) -> bool:
+        mdy_list = date.split("-")
+        day, month, year = map(int, date.split('-'))
+        self.year = year
+        self.month = month
+        self.day = day
+        return 0 < day <= 31 and 0 < month <= 12 and 0 < year < 9999
+
+    def from_string(self, input_date: str) -> 'Date':
+        mdy_list = input_date.split("-")
+        year, month, day = map(int, input_date.split('-'))
+        self.year = year
+        self.month = month
+        self.day = day
+        return
+
+        x = input_date.split("-")
         if int(x[0]) <= 31:
             self.month = int(x[0])
         else:
@@ -23,6 +39,9 @@ class Date:
         self.year = x[2]
 
 
-my_date = Date()
-my_date.from_string('32-12-2077')
-print(my_date)
+date = Date()
+date.from_string('10-12-2077')
+print(date)
+
+print(date.is_date_valid('10-12-2077'))
+print(date.is_date_valid('40-12-2077'))
