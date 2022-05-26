@@ -1,23 +1,20 @@
 import functools
-from functools import wraps
-from collections.abc import Callable
 
 
 def singleton(cls):
     """ Декоратор класса. Превращает класс в синглтон (может иметь только один инстанс) """
-    functools.wraps(cls)
+    @functools.wraps(cls)
     def wrapper_singleton(*args, **kwargs):
         if not wrapper_singleton.instance:
             wrapper_singleton.instance = cls(*args, **kwargs)
         return wrapper_singleton.instance
     wrapper_singleton.instance = None  # кэш
-    return wrapper_singleton()
+    return wrapper_singleton
 
 
 @singleton
 class Example:
-    def __init__(self):
-        self.a = 'a'
+    pass
 
 
 my_obj = Example()
