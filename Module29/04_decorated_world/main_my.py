@@ -1,12 +1,16 @@
-"""Напишите декоратор `check_permission`, который проверяет, есть ли у пользователя доступ к вызываемой функции, и если нет, то выдаёт исключение `PermissionError`.
-"""
+#Реализуйте декоратор для декораторов: он должен декорировать другую функцию, которая
+#должна быть декоратором, и даёт возможность любому декоратору принимать произвольные
+# аргументы.
+# decorator_with_args_for_any_decorator это декоратор для декораторов. Это решение из
+# Module29\01_permissions подходит для решения задачи
+
 import functools
 from functools import wraps
 from collections.abc import Callable
 
 
-def check_permission_with_user(input_user: str = None) -> Callable:
-    def check_permission(fn: Callable) -> Callable:
+def decorator_with_args_for_any_decorator(input_user: str = None) -> Callable:
+    def decorated_decorator(fn: Callable) -> Callable:
 
         @functools.wraps(fn)
         def wrapped():
@@ -19,16 +23,16 @@ def check_permission_with_user(input_user: str = None) -> Callable:
 
             return fn()
         return wrapped
-    return check_permission
+    return decorated_decorator
 
 
-@check_permission_with_user('admin')
+@decorator_with_args_for_any_decorator('admin')
 def delete_site(input_user=None):
     print('Удаляем сайт')
     return
 
 
-@check_permission_with_user('user_1')
+@decorator_with_args_for_any_decorator('user_1')
 def add_comment(input_user=None):
     print('Добавляем комментарий')
 
