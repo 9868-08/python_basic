@@ -1,0 +1,3 @@
+[submodule "python_basic_diploma"]
+	path = python_basic_diploma
+	url = git@gitlab.skillbox.ru:roman_ermolaev/python_basic_diploma.git
