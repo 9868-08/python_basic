@@ -1,0 +1,13 @@
+message = "здесь что-то написано"
+#message = input ('Введите текст: ')
+count = dict()
+for i in message:
+	count[i] = 0
+for i in message:
+	count[i] += 1
+print ('Оригинальный словарь частот:')
+my_dict = dict ()
+for i in message:
+	print (i, ':', count[i])
+	
+
